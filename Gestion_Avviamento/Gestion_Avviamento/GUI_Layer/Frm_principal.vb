@@ -43,6 +43,7 @@
 
 
     Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_salir.Click
+        Me.Dispose()
         End
     End Sub
 

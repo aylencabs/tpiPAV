@@ -20,9 +20,9 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("DS_orig_mat"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("DS_Avviamento"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class DS_orig_mat
+Partial Public Class DS_Avviamento
     Inherits Global.System.Data.DataSet
     
     Private tableDT_origen As DT_origenDataTable
@@ -128,7 +128,7 @@ Partial Public Class DS_orig_mat
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As DS_orig_mat = CType(MyBase.Clone,DS_orig_mat)
+        Dim cln As DS_Avviamento = CType(MyBase.Clone,DS_Avviamento)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -199,9 +199,9 @@ Partial Public Class DS_orig_mat
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "DS_orig_mat"
+        Me.DataSetName = "DS_Avviamento"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/DS_orig_mat.xsd"
+        Me.Namespace = "http://tempuri.org/DS_Avviamento.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableDT_origen = New DT_origenDataTable()
@@ -225,7 +225,7 @@ Partial Public Class DS_orig_mat
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As DS_orig_mat = New DS_orig_mat()
+        Dim ds As DS_Avviamento = New DS_Avviamento()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -283,7 +283,7 @@ Partial Public Class DS_orig_mat
     Partial Public Class DT_origenDataTable
         Inherits Global.System.Data.TypedTableBase(Of DT_origenRow)
         
-        Private columnProveedor As Global.System.Data.DataColumn
+        Private columnpais As Global.System.Data.DataColumn
         
         Private columntipo_vol As Global.System.Data.DataColumn
         
@@ -326,9 +326,9 @@ Partial Public Class DS_orig_mat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ProveedorColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property paisColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnProveedor
+                Return Me.columnpais
             End Get
         End Property
         
@@ -385,9 +385,9 @@ Partial Public Class DS_orig_mat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddDT_origenRow(ByVal Proveedor As Integer, ByVal tipo_vol As Integer, ByVal cant_mat As Integer) As DT_origenRow
+        Public Overloads Function AddDT_origenRow(ByVal pais As String, ByVal tipo_vol As String, ByVal cant_mat As String) As DT_origenRow
             Dim rowDT_origenRow As DT_origenRow = CType(Me.NewRow,DT_origenRow)
-            Dim columnValuesArray() As Object = New Object() {Proveedor, tipo_vol, cant_mat}
+            Dim columnValuesArray() As Object = New Object() {pais, tipo_vol, cant_mat}
             rowDT_origenRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDT_origenRow)
             Return rowDT_origenRow
@@ -410,7 +410,7 @@ Partial Public Class DS_orig_mat
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnProveedor = MyBase.Columns("Proveedor")
+            Me.columnpais = MyBase.Columns("pais")
             Me.columntipo_vol = MyBase.Columns("tipo_vol")
             Me.columncant_mat = MyBase.Columns("cant_mat")
         End Sub
@@ -418,11 +418,11 @@ Partial Public Class DS_orig_mat
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnProveedor = New Global.System.Data.DataColumn("Proveedor", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnProveedor)
-            Me.columntipo_vol = New Global.System.Data.DataColumn("tipo_vol", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnpais = New Global.System.Data.DataColumn("pais", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpais)
+            Me.columntipo_vol = New Global.System.Data.DataColumn("tipo_vol", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntipo_vol)
-            Me.columncant_mat = New Global.System.Data.DataColumn("cant_mat", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columncant_mat = New Global.System.Data.DataColumn("cant_mat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncant_mat)
         End Sub
         
@@ -491,7 +491,7 @@ Partial Public Class DS_orig_mat
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DS_orig_mat = New DS_orig_mat()
+            Dim ds As DS_Avviamento = New DS_Avviamento()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -570,25 +570,25 @@ Partial Public Class DS_orig_mat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Proveedor() As Integer
+        Public Property pais() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDT_origen.ProveedorColumn),Integer)
+                    Return CType(Me(Me.tableDT_origen.paisColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Proveedor' de la tabla 'DT_origen' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'pais' de la tabla 'DT_origen' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDT_origen.ProveedorColumn) = value
+                Me(Me.tableDT_origen.paisColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property tipo_vol() As Integer
+        Public Property tipo_vol() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDT_origen.tipo_volColumn),Integer)
+                    Return CType(Me(Me.tableDT_origen.tipo_volColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'tipo_vol' de la tabla 'DT_origen' es DBNull.", e)
                 End Try
@@ -600,10 +600,10 @@ Partial Public Class DS_orig_mat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property cant_mat() As Integer
+        Public Property cant_mat() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDT_origen.cant_matColumn),Integer)
+                    Return CType(Me(Me.tableDT_origen.cant_matColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'cant_mat' de la tabla 'DT_origen' es DBNull.", e)
                 End Try
@@ -615,14 +615,14 @@ Partial Public Class DS_orig_mat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsProveedorNull() As Boolean
-            Return Me.IsNull(Me.tableDT_origen.ProveedorColumn)
+        Public Function IspaisNull() As Boolean
+            Return Me.IsNull(Me.tableDT_origen.paisColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetProveedorNull()
-            Me(Me.tableDT_origen.ProveedorColumn) = Global.System.Convert.DBNull
+        Public Sub SetpaisNull()
+            Me(Me.tableDT_origen.paisColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

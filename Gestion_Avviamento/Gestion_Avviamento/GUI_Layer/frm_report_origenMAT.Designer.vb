@@ -29,13 +29,12 @@ Partial Class frm_report_origenMAT
         Me.lbl_paises = New System.Windows.Forms.Label()
         Me.cbo_paises = New System.Windows.Forms.ComboBox()
         Me.report = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.DS_Avviamento = New Gestion_Avviamento.DS_Avviamento()
+        Me.DT_origenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DS_orig_matBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_Avviamento, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DT_origenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DS_orig_matBindingSource
-        '
-        Me.DS_orig_matBindingSource.DataMember = "DT_origen"
-        Me.DS_orig_matBindingSource.DataSource = GetType(Gestion_Avviamento.DS_orig_mat)
         '
         'btn_update
         '
@@ -66,21 +65,31 @@ Partial Class frm_report_origenMAT
         '
         'report
         '
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.DS_orig_matBindingSource
+        ReportDataSource1.Name = "DS_origen"
+        ReportDataSource1.Value = Me.DT_origenBindingSource
         Me.report.LocalReport.DataSources.Add(ReportDataSource1)
         Me.report.LocalReport.ReportEmbeddedResource = "Gestion_Avviamento.report_orig_mat.rdlc"
-        Me.report.Location = New System.Drawing.Point(16, 81)
+        Me.report.Location = New System.Drawing.Point(12, 57)
         Me.report.Name = "report"
-        Me.report.Size = New System.Drawing.Size(736, 360)
+        Me.report.Size = New System.Drawing.Size(991, 515)
         Me.report.TabIndex = 3
+        '
+        'DS_Avviamento
+        '
+        Me.DS_Avviamento.DataSetName = "DS_Avviamento"
+        Me.DS_Avviamento.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DT_origenBindingSource
+        '
+        Me.DT_origenBindingSource.DataMember = "DT_origen"
+        Me.DT_origenBindingSource.DataSource = Me.DS_Avviamento
         '
         'frm_report_origenMAT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(764, 453)
+        Me.ClientSize = New System.Drawing.Size(1015, 584)
         Me.Controls.Add(Me.report)
         Me.Controls.Add(Me.cbo_paises)
         Me.Controls.Add(Me.lbl_paises)
@@ -94,6 +103,8 @@ Partial Class frm_report_origenMAT
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Materiales por Origen y Volumen"
         CType(Me.DS_orig_matBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_Avviamento, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DT_origenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -101,6 +112,8 @@ Partial Class frm_report_origenMAT
     Friend WithEvents btn_update As System.Windows.Forms.Button
     Friend WithEvents lbl_paises As System.Windows.Forms.Label
     Friend WithEvents cbo_paises As System.Windows.Forms.ComboBox
-    Friend WithEvents report As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents DS_orig_matBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents report As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents DT_origenBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents DS_Avviamento As Gestion_Avviamento.DS_Avviamento
 End Class

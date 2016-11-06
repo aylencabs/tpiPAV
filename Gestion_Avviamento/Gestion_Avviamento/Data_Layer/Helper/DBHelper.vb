@@ -120,10 +120,10 @@ Public Class BDHelper
         Dim conexion As New SqlConnection
         Dim cmd As New SqlCommand
         Dim tabla As New DataTable
-        Dim strSQL = "SELECT T5.descripcion, t2.descripcion, COUNT(T1.ID_MAT)" & _
-            "FROM Material T1, Tipo_Volumen T2, Prov_X_Mat T3, Proveedor T4, Paises T5" & _
-            "WHERE(T1.id_mat = T3.id_mat) AND T1.tipo_vol = T2.id AND T3.id_prov = T4.cod_proveedor" & _
-            "AND T4.pais = T5.id AND T1.habilitado = 0 AND T4.habilitado = 0 "
+        Dim strSQL = "SELECT T5.descripcion as pais, t2.descripcion as tipo_vol, COUNT(T1.ID_MAT) as cant_mat" & _
+            " FROM Material T1, Tipo_Volumen T2, Prov_X_Mat T3, Proveedor T4, Paises T5" & _
+            " WHERE(T1.id_mat = T3.id_mat) AND T1.tipo_vol = T2.id AND T3.id_prov = T4.cod_proveedor" & _
+            " AND T4.pais = T5.id AND T1.habilitado = 0 AND T4.habilitado = 0 "
 
         If id_pais <> -1 Then
             strSQL += " AND T5.id = " + id_pais.ToString
