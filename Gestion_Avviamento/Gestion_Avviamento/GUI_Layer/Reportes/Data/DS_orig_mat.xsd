@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_orig_mat" targetNamespace="http://tempuri.org/DS_orig_mat.xsd" xmlns:mstns="http://tempuri.org/DS_orig_mat.xsd" xmlns="http://tempuri.org/DS_orig_mat.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_orig_mat" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DS_orig_mat" msprop:Generator_UserDSName="DS_orig_mat">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DT_origen" msprop:Generator_TableClassName="DT_origenDataTable" msprop:Generator_TableVarName="tableDT_origen" msprop:Generator_RowChangedName="DT_origenRowChanged" msprop:Generator_TablePropName="DT_origen" msprop:Generator_RowDeletingName="DT_origenRowDeleting" msprop:Generator_RowChangingName="DT_origenRowChanging" msprop:Generator_RowEvHandlerName="DT_origenRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_origenRowDeleted" msprop:Generator_RowClassName="DT_origenRow" msprop:Generator_UserTableName="DT_origen" msprop:Generator_RowEvArgName="DT_origenRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Proveedor" msprop:Generator_ColumnVarNameInTable="columnProveedor" msprop:Generator_ColumnPropNameInRow="Proveedor" msprop:Generator_ColumnPropNameInTable="ProveedorColumn" msprop:Generator_UserColumnName="Proveedor" type="xs:int" minOccurs="0" />
+              <xs:element name="tipo_vol" msprop:Generator_ColumnVarNameInTable="columntipo_vol" msprop:Generator_ColumnPropNameInRow="tipo_vol" msprop:Generator_ColumnPropNameInTable="tipo_volColumn" msprop:Generator_UserColumnName="tipo_vol" type="xs:int" minOccurs="0" />
+              <xs:element name="cant_mat" msprop:Generator_ColumnVarNameInTable="columncant_mat" msprop:Generator_ColumnPropNameInRow="cant_mat" msprop:Generator_ColumnPropNameInTable="cant_matColumn" msprop:Generator_UserColumnName="cant_mat" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

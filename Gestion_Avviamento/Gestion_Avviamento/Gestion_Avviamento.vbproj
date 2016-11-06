@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{75886D99-2721-4BE2-8990-F8FAC6A71CCE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Gestion_Avviamento.My.MyApplication</StartupObject>
+    <RootNamespace>Gestion_Avviamento</RootNamespace>
+    <AssemblyName>Gestion_Avviamento</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Gestion_Avviamento.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Gestion_Avviamento.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business_Layer\Entities\calle.vb" />
+    <Compile Include="Business_Layer\Entities\Material.vb" />
+    <Compile Include="Business_Layer\Entities\Pais.vb" />
+    <Compile Include="Business_Layer\Entities\Supplier.vb" />
+    <Compile Include="Business_Layer\Entities\Tipo_Volumen.vb" />
+    <Compile Include="Business_Layer\Entities\Ubicacion.vb" />
+    <Compile Include="Business_Layer\Entities\User.vb" />
+    <Compile Include="Business_Layer\Services\CalleService.vb" />
+    <Compile Include="Business_Layer\Services\MaterialService.vb" />
+    <Compile Include="Business_Layer\Services\PaisService.vb" />
+    <Compile Include="Business_Layer\Services\SupplierService.vb" />
+    <Compile Include="Business_Layer\Services\TipoVolService.vb" />
+    <Compile Include="Business_Layer\Services\UserService.vb" />
+    <Compile Include="Data_Layer\DAO\MaterialDAO.vb" />
+    <Compile Include="Data_Layer\DAO\PaisDAO.vb" />
+    <Compile Include="Data_Layer\DAO\SupplierDAO.vb" />
+    <Compile Include="Data_Layer\DAO\UserDAO.vb" />
+    <Compile Include="Data_Layer\DAO\VolDAO.vb" />
+    <Compile Include="Data_Layer\DAO\WarehouseDAO.vb" />
+    <Compile Include="Data_Layer\Helper\DBHelper.vb" />
+    <Compile Include="GUI_Layer\Detalle_Material.Designer.vb">
+      <DependentUpon>Detalle_Material.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\Detalle_Material.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_add_supp.Designer.vb">
+      <DependentUpon>frm_add_supp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_add_supp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_almacen.Designer.vb">
+      <DependentUpon>frm_almacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_almacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_detalle_proveedor.Designer.vb">
+      <DependentUpon>frm_detalle_proveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_detalle_proveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_detalle_ingreso.Designer.vb">
+      <DependentUpon>frm_detalle_ingreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_detalle_ingreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\Frm_login.Designer.vb">
+      <DependentUpon>Frm_login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\Frm_login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\Frm_materiales.Designer.vb">
+      <DependentUpon>Frm_materiales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\Frm_materiales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\Frm_principal.Designer.vb">
+      <DependentUpon>Frm_principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\Frm_principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_principal_movimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_principal_movimiento.Designer.vb">
+      <DependentUpon>frm_principal_movimiento.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_Proveedores.Designer.vb">
+      <DependentUpon>frm_Proveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_Proveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_report_origenMAT.Designer.vb">
+      <DependentUpon>frm_report_origenMAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_report_origenMAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\Reportes\Data\DS_orig_mat.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_orig_mat.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\Reportes\Data\DS_orig_mat.vb">
+      <DependentUpon>DS_orig_mat.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUI_Layer\Detalle_Material.resx">
+      <DependentUpon>Detalle_Material.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\frm_add_supp.resx">
+      <DependentUpon>frm_add_supp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\frm_almacen.resx">
+      <DependentUpon>frm_almacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\frm_detalle_proveedor.resx">
+      <DependentUpon>frm_detalle_proveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\frm_detalle_ingreso.resx">
+      <DependentUpon>frm_detalle_ingreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\Frm_login.resx">
+      <DependentUpon>Frm_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\Frm_materiales.resx">
+      <DependentUpon>Frm_materiales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\Frm_principal.resx">
+      <DependentUpon>Frm_principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\frm_principal_movimiento.resx">
+      <DependentUpon>frm_principal_movimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\frm_Proveedores.resx">
+      <DependentUpon>frm_Proveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\frm_report_origenMAT.resx">
+      <DependentUpon>frm_report_origenMAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\Reportes\Design\report_orig_mat.rdlc" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GUI_Layer\Reportes\Data\DS_orig_mat.xsc">
+      <DependentUpon>DS_orig_mat.xsd</DependentUpon>
+    </None>
+    <None Include="GUI_Layer\Reportes\Data\DS_orig_mat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_orig_mat.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="GUI_Layer\Reportes\Data\DS_orig_mat.xss">
+      <DependentUpon>DS_orig_mat.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\DS_orig_mat.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_control.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ingresar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asignar proveedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asignar proveedor1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pluss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generar_ubicaciones.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

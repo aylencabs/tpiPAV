@@ -1,0 +1,77 @@
+﻿Public Class frm_proveedor
+
+    '------------------------> Inicio Modificación <------------------------
+    'Versión inicial
+    'cbaigorria
+    '12/09/2016
+    '-----------------------------------------------------------------------
+    Dim supps As List(Of Supplier)
+
+    Private Sub frm_proveedor_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        'Llenar grilla
+        actualizar_grilla()
+
+    End Sub
+
+
+    
+    Private Sub btn_Nuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Nuevo.Click
+        'Cargar nuevo proveedor
+        'Dejar todos los campos de la ventana modal vacíos y habilitados
+        frm_detalle_proveedor.ShowDialog()
+
+    End Sub
+
+    Private Sub btn_editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_editar.Click
+        'Editar Proveedor
+        'cargar los datos de la ventana y deshabilitar cod_proveedor
+
+    End Sub
+
+
+    Private Sub llenar_Grid(ByVal lst As List(Of Supplier))
+        'Completar
+        'Asignamos a la propiedad SelectionMode el valor FullRowSelect para que 
+        'al hacer click sobre la grilla se resalte toda la fila completa. Esto puede tmb hacerse en modo diseño.
+        dgv_proveedor.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgv_proveedor.Rows.Clear()
+        For Each oSupplier In lst
+            With oSupplier
+                'cargar filas del datagridview a partir de un array de strings
+                dgv_proveedor.Rows.Add(New String() {.codigo.ToString, .razon_social.ToString, .cuit.ToString, .pais.ToString, .contacto.ToString, .email.ToString})
+            End With
+        Next
+    End Sub
+
+
+    Private Sub actualizar_grilla()
+        Dim estado As Integer = -1
+        Dim oSupplierService As New SupplierService
+        supps = oSupplierService.listSuppliers
+        llenar_Grid(supps)
+
+    End Sub
+    '--------------------------> Fin Modificación <-------------------------
+    'Versión inicial
+    'cbaigorria
+    '12/09/2016
+    '-----------------------------------------------------------------------
+
+
+    Private Sub btn_Buscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Buscar.Click
+        'Verifico que el txtbox no esté vacío
+        Dim oSupplierService As New SupplierService
+        Dim oSup As New Supplier
+        If Not IsNothing(txt_proveedor.Text.ToString) Then
+            If Not IsNothing(supps) Then
+                supps.Clear()
+            End If
+            oSup = oSupplierService.list_one(Convert.ToInt32(txt_proveedor.Text.ToString))
+            If Not IsNothing(oSup) Then
+                supps.Add(oSup)
+                llenar_Grid(supps)
+            End If
+        End If
+    End Sub
+End Class

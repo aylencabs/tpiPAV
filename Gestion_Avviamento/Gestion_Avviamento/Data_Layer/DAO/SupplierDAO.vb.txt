@@ -1,0 +1,90 @@
+﻿Public Class SupplierDAO
+
+    '------------------------> Inicio Modificación <------------------------
+    'Versión inicial
+    'cbaigorria
+    '06-09-2016
+    '-----------------------------------------------------------------------
+
+    Public Function getAll() As List(Of Supplier)
+        Dim oSupplier As Supplier
+        Dim supps As New List(Of Supplier)
+        Dim strSQL = "SELECT * FROM Proveedor " & _
+            " ORDER BY cod_proveedor ASC"
+
+        'Con la tabla devuelta por el Helper creamos N OBJETOS Supplier a partir de los datos de la/s filas de la tabla Supplier
+
+        For Each row As DataRow In BDHelper.getDBHelper().ConsultaSQL(strSQL).Rows
+            oSupplier = New Supplier()
+            With oSupplier
+                .codigo = Convert.ToInt32(row.Item("cod_proveedor").ToString)
+                .contacto = row.Item("contacto").ToString
+                .cuit = Convert.ToInt32(row.Item("cuit").ToString)
+                .email = row.Item("email").ToString
+                .pais = row.Item("pais").ToString
+                .razon_social = row.Item("razon_social").ToString
+                .habilitado = row.Item("activo").ToString
+            End With
+            supps.Add(oSupplier)
+        Next
+
+        Return supps
+    End Function
+
+    Public Function update(ByVal supp As Supplier) As Integer
+        Dim strSQL = "UPDATE Proveedor SET razon_social = '"
+        strSQL += supp.razon_social + "', contacto = '"
+        strSQL += supp.contacto + "', cuit = '"
+        strSQL += supp.cuit + "', email = '"
+        strSQL += supp.email + "', pais = '"
+        strSQL += supp.pais + "' WHERE cod_proveedor = " + supp.codigo
+
+        Return BDHelper.getDBHelper.EjecutarSQL(strSQL)
+    End Function
+
+    Public Function insert_Supplier(ByVal supp As Supplier) As Integer
+        Dim strSQL = "INSERT INTO Proveedor (razon_social, cuit, pais, contacto, email) "
+        strSQL += "VALUES ('"
+        strSQL += supp.razon_social + "', "
+        strSQL += Convert.ToInt32(supp.cuit.ToString) + ", '"
+        strSQL += supp.pais + "', '"
+        strSQL += supp.contacto + "', '"
+        strSQL += supp.email + "')"
+
+        Return BDHelper.getDBHelper.EjecutarSQL(strSQL)
+    End Function
+
+    Public Function delete_supplier(ByVal supp As Supplier) As Integer
+        Dim strSQL = "UPDATE Proveedor SET activo = 1 WHERE cod_proveedor = " + supp.codigo
+        Return BDHelper.getDBHelper.EjecutarSQL(strSql)
+    End Function
+
+    '--------------------------> Fin Modificación <-------------------------
+    'Versión inicial
+    'cbaigorria
+    '06-09-2016
+    '-----------------------------------------------------------------------
+
+    Public Function get_one(ByVal codigo As Integer) As Supplier
+        Dim oSupplier As Supplier = Nothing
+        Dim oTable As DataTable
+
+        'Armamos el query para ejecutar a la base
+        Dim strSQL = "SELECT * FROM Proveedor WHERE cod_proveedor = " + Convert.ToInt32(codigo)
+        'Delegamos la ejecución del comando SQL al Helper
+        oTable = BDHelper.getDBHelper().ConsultaSQL(strSQL)
+        'Con la tabla devuelta por el Helper creamos un OBJETO User a partir de los datos de fila de la tabla Users
+        If oTable.Rows.Count > 0 Then
+            oSupplier = New Supplier()
+            oSupplier.codigo = oTable.Rows(0).Item("cod_proveedor").ToString
+            oSupplier.contacto = oTable.Rows(0).Item("contacto").ToString
+            oSupplier.cuit = oTable.Rows(0).Item("cuit").ToString
+            oSupplier.email = oTable.Rows(0).Item("email").ToString
+            oSupplier.habilitado = oTable.Rows(0).Item("habilitado").ToString
+            oSupplier.pais = oTable.Rows(0).Item("pais").ToString
+            oSupplier.razon_social = oTable.Rows(0).Item("razon_social").ToString
+        End If
+        Return oSupplier
+    End Function
+
+End Class

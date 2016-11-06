@@ -1,0 +1,19 @@
+﻿Public Class frm_detalle_proveedor
+
+    Private Sub btn_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_guardar.Click
+
+    End Sub
+
+    Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancelar.Click
+        Me.Close()
+    End Sub
+
+    Private Function validar() As Boolean
+        Dim result As Boolean = False
+        'Validar datos e insertar/guardar
+
+
+
+        Return result
+    End Function
+End Class

@@ -1,0 +1,186 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frm_proveedor
+    Inherits System.Windows.Forms.Form
+
+    'Form reemplaza a Dispose para limpiar la lista de componentes.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Requerido por el Diseñador de Windows Forms
+    Private components As System.ComponentModel.IContainer
+
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar usando el Diseñador de Windows Forms.  
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.dgv_proveedor = New System.Windows.Forms.DataGridView()
+        Me.btn_cerrar = New System.Windows.Forms.Button()
+        Me.txt_proveedor = New System.Windows.Forms.TextBox()
+        Me.btn_Nuevo = New System.Windows.Forms.Button()
+        Me.btn_Buscar = New System.Windows.Forms.Button()
+        Me.btn_editar = New System.Windows.Forms.Button()
+        Me.lbl_proveedor = New System.Windows.Forms.Label()
+        Me.codigo_proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.razon_social = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CUIT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pais = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.contacto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.habilitado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.dgv_proveedor, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'dgv_proveedor
+        '
+        Me.dgv_proveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_proveedor.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo_proveedor, Me.razon_social, Me.CUIT, Me.pais, Me.contacto, Me.email, Me.habilitado})
+        Me.dgv_proveedor.Location = New System.Drawing.Point(45, 174)
+        Me.dgv_proveedor.Name = "dgv_proveedor"
+        Me.dgv_proveedor.Size = New System.Drawing.Size(662, 192)
+        Me.dgv_proveedor.TabIndex = 4
+        '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.ForeColor = System.Drawing.Color.Black
+        Me.btn_cerrar.Location = New System.Drawing.Point(723, 414)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(88, 37)
+        Me.btn_cerrar.TabIndex = 7
+        Me.btn_cerrar.Text = "Cerrar"
+        Me.btn_cerrar.UseVisualStyleBackColor = True
+        '
+        'txt_proveedor
+        '
+        Me.txt_proveedor.Location = New System.Drawing.Point(45, 55)
+        Me.txt_proveedor.MaxLength = 8
+        Me.txt_proveedor.Name = "txt_proveedor"
+        Me.txt_proveedor.Size = New System.Drawing.Size(333, 31)
+        Me.txt_proveedor.TabIndex = 8
+        '
+        'btn_Nuevo
+        '
+        Me.btn_Nuevo.ForeColor = System.Drawing.Color.Black
+        Me.btn_Nuevo.Location = New System.Drawing.Point(723, 174)
+        Me.btn_Nuevo.Name = "btn_Nuevo"
+        Me.btn_Nuevo.Size = New System.Drawing.Size(88, 37)
+        Me.btn_Nuevo.TabIndex = 9
+        Me.btn_Nuevo.Text = "Nuevo"
+        Me.btn_Nuevo.UseVisualStyleBackColor = True
+        '
+        'btn_Buscar
+        '
+        Me.btn_Buscar.ForeColor = System.Drawing.Color.Black
+        Me.btn_Buscar.Location = New System.Drawing.Point(418, 51)
+        Me.btn_Buscar.Name = "btn_Buscar"
+        Me.btn_Buscar.Size = New System.Drawing.Size(88, 37)
+        Me.btn_Buscar.TabIndex = 10
+        Me.btn_Buscar.Text = "Buscar"
+        Me.btn_Buscar.UseVisualStyleBackColor = True
+        '
+        'btn_editar
+        '
+        Me.btn_editar.ForeColor = System.Drawing.Color.Black
+        Me.btn_editar.Location = New System.Drawing.Point(723, 217)
+        Me.btn_editar.Name = "btn_editar"
+        Me.btn_editar.Size = New System.Drawing.Size(88, 37)
+        Me.btn_editar.TabIndex = 12
+        Me.btn_editar.Text = "Editar"
+        Me.btn_editar.UseVisualStyleBackColor = True
+        '
+        'lbl_proveedor
+        '
+        Me.lbl_proveedor.AutoSize = True
+        Me.lbl_proveedor.Location = New System.Drawing.Point(41, 29)
+        Me.lbl_proveedor.Name = "lbl_proveedor"
+        Me.lbl_proveedor.Size = New System.Drawing.Size(264, 23)
+        Me.lbl_proveedor.TabIndex = 13
+        Me.lbl_proveedor.Text = "Ingresar el código del proveedor:"
+        '
+        'codigo_proveedor
+        '
+        Me.codigo_proveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.codigo_proveedor.HeaderText = "Código"
+        Me.codigo_proveedor.Name = "codigo_proveedor"
+        Me.codigo_proveedor.Width = 88
+        '
+        'razon_social
+        '
+        Me.razon_social.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.razon_social.HeaderText = "Razon Social"
+        Me.razon_social.Name = "razon_social"
+        Me.razon_social.Width = 130
+        '
+        'CUIT
+        '
+        Me.CUIT.HeaderText = "CUIT"
+        Me.CUIT.Name = "CUIT"
+        '
+        'pais
+        '
+        Me.pais.HeaderText = "Pais"
+        Me.pais.Name = "pais"
+        '
+        'contacto
+        '
+        Me.contacto.HeaderText = "Contacto"
+        Me.contacto.Name = "contacto"
+        '
+        'email
+        '
+        Me.email.HeaderText = "Email"
+        Me.email.Name = "email"
+        '
+        'habilitado
+        '
+        Me.habilitado.HeaderText = "habilitado"
+        Me.habilitado.Name = "habilitado"
+        Me.habilitado.Visible = False
+        '
+        'frm_proveedor
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 23.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(820, 479)
+        Me.Controls.Add(Me.lbl_proveedor)
+        Me.Controls.Add(Me.btn_editar)
+        Me.Controls.Add(Me.btn_Buscar)
+        Me.Controls.Add(Me.btn_Nuevo)
+        Me.Controls.Add(Me.txt_proveedor)
+        Me.Controls.Add(Me.btn_cerrar)
+        Me.Controls.Add(Me.dgv_proveedor)
+        Me.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.Lavender
+        Me.Margin = New System.Windows.Forms.Padding(5)
+        Me.Name = "frm_proveedor"
+        Me.Text = "Proveedores"
+        CType(Me.dgv_proveedor, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents dgv_proveedor As System.Windows.Forms.DataGridView
+    Friend WithEvents btn_cerrar As System.Windows.Forms.Button
+    Friend WithEvents txt_proveedor As System.Windows.Forms.TextBox
+    Friend WithEvents btn_Nuevo As System.Windows.Forms.Button
+    Friend WithEvents btn_Buscar As System.Windows.Forms.Button
+    Friend WithEvents btn_editar As System.Windows.Forms.Button
+    Friend WithEvents lbl_proveedor As System.Windows.Forms.Label
+    Friend WithEvents codigo_proveedor As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents razon_social As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CUIT As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents pais As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents contacto As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents email As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents habilitado As System.Windows.Forms.DataGridViewTextBoxColumn
+
+End Class
