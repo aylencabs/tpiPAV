@@ -147,4 +147,30 @@ Public Class BDHelper
 
         Return tabla
     End Function
+
+    Public Function listado_materiales() As DataTable
+        Dim conexion As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim tabla As New DataTable
+        Dim strSQL = "SELECT A.id_mat AS NRO_MAT, A.descrip AS DESCRIPCION, B.descripcion AS TIPO_VOLUMEN " & _
+                " FROM Material A, Tipo_Volumen B" & _
+                " WHERE(A.tipo_vol = B.id)" & _
+                " AND A.habilitado = 0 ORDER BY 1 ASC"
+
+        Try
+            conexion.ConnectionString = string_conexion
+            conexion.Open()
+            cmd.Connection = conexion
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = strSQL
+            tabla.Load(cmd.ExecuteReader)
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexion.Close()
+            conexion.Dispose()
+        End Try
+
+        Return tabla
+    End Function
 End Class

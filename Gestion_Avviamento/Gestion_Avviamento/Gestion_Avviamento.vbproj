@@ -110,10 +110,16 @@
     <Compile Include="Data_Layer\DAO\VolDAO.vb" />
     <Compile Include="Data_Layer\DAO\WarehouseDAO.vb" />
     <Compile Include="Data_Layer\Helper\DBHelper.vb" />
-    <Compile Include="GUI_Layer\DS_Avviamento.Designer.vb">
+    <Compile Include="DS_Avviamento.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Avviamento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\report_list_mat.Designer.vb">
+      <DependentUpon>report_list_mat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\report_list_mat.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI_Layer\Detalle_Material.Designer.vb">
       <DependentUpon>Detalle_Material.vb</DependentUpon>
@@ -199,6 +205,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI_Layer\report_list_mat.resx">
+      <DependentUpon>report_list_mat.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_Layer\Detalle_Material.resx">
       <DependentUpon>Detalle_Material.vb</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +241,7 @@
     <EmbeddedResource Include="GUI_Layer\frm_report_origenMAT.resx">
       <DependentUpon>frm_report_origenMAT.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\Reportes\Design\listado_mats.rdlc" />
     <EmbeddedResource Include="GUI_Layer\Reportes\Design\report_orig_mat.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -241,15 +251,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GUI_Layer\DS_Avviamento.xsc">
+    <None Include="DS_Avviamento.xsc">
       <DependentUpon>DS_Avviamento.xsd</DependentUpon>
     </None>
-    <None Include="GUI_Layer\DS_Avviamento.xsd">
+    <None Include="DS_Avviamento.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DS_Avviamento.Designer.vb</LastGenOutput>
     </None>
-    <None Include="GUI_Layer\DS_Avviamento.xss">
+    <None Include="DS_Avviamento.xss">
       <DependentUpon>DS_Avviamento.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
@@ -344,6 +354,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

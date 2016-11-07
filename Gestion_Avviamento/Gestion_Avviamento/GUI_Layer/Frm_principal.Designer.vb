@@ -30,13 +30,14 @@ Partial Class Frm_principal
         Me.MovimientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tool_grip_report = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteOrigenMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeMaterialesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tool_grip_admin = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_user = New System.Windows.Forms.Panel()
         Me.lbl_user = New System.Windows.Forms.Label()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
         Me.btn_salir = New System.Windows.Forms.Button()
-        Me.ReporteOrigenMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.pnl_user.SuspendLayout()
         Me.SuspendLayout()
@@ -88,11 +89,23 @@ Partial Class Frm_principal
         '
         'tool_grip_report
         '
-        Me.tool_grip_report.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteOrigenMaterialToolStripMenuItem})
+        Me.tool_grip_report.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteOrigenMaterialToolStripMenuItem, Me.ListadoDeMaterialesToolStripMenuItem})
         Me.tool_grip_report.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tool_grip_report.Name = "tool_grip_report"
         Me.tool_grip_report.Size = New System.Drawing.Size(68, 20)
         Me.tool_grip_report.Text = "Reportes"
+        '
+        'ReporteOrigenMaterialToolStripMenuItem
+        '
+        Me.ReporteOrigenMaterialToolStripMenuItem.Name = "ReporteOrigenMaterialToolStripMenuItem"
+        Me.ReporteOrigenMaterialToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.ReporteOrigenMaterialToolStripMenuItem.Text = "Reporte origen Material"
+        '
+        'ListadoDeMaterialesToolStripMenuItem
+        '
+        Me.ListadoDeMaterialesToolStripMenuItem.Name = "ListadoDeMaterialesToolStripMenuItem"
+        Me.ListadoDeMaterialesToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.ListadoDeMaterialesToolStripMenuItem.Text = "Listado de Materiales"
         '
         'tool_grip_admin
         '
@@ -148,12 +161,6 @@ Partial Class Frm_principal
         Me.btn_salir.TabIndex = 6
         Me.btn_salir.UseVisualStyleBackColor = True
         '
-        'ReporteOrigenMaterialToolStripMenuItem
-        '
-        Me.ReporteOrigenMaterialToolStripMenuItem.Name = "ReporteOrigenMaterialToolStripMenuItem"
-        Me.ReporteOrigenMaterialToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
-        Me.ReporteOrigenMaterialToolStripMenuItem.Text = "Reporte origen Material"
-        '
         'Frm_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -196,4 +203,5 @@ Partial Class Frm_principal
     Friend WithEvents lbl_ingreso As System.Windows.Forms.Label
     Friend WithEvents btn_salir As System.Windows.Forms.Button
     Friend WithEvents ReporteOrigenMaterialToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeMaterialesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
