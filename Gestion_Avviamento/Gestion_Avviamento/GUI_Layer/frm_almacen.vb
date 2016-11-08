@@ -6,19 +6,29 @@
     Private Sub frm_almacen_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim oCalleService As New CalleService
         llenar_Grid(oCalleService.get_all())
-
     End Sub
 
     Private Sub btn_cerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cerrar.Click
+        Me.Dispose()
         Me.Close()
     End Sub
 
     Private Sub btn_Nuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Nuevo.Click
         'Creo nueva calle y ubicaciones
+        frm_det_warehouse.action = frm_det_warehouse.action_type.insert
+        frm_det_warehouse.ShowDialog()
     End Sub
 
     Private Sub btn_watch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_watch.Click
         'Veo el detalle de la calle ingresada
+        If dgv_calles.SelectedRows.Count = 0 Then
+            MsgBox("Debe seleccionar una fila", vbExclamation, "Alerta!")
+        Else
+            frm_det_warehouse.action = frm_det_warehouse.action_type.view
+            row_selected = dgv_calles.SelectedRows(0)
+            frm_det_warehouse.ShowDialog()
+        End If
+
     End Sub
 
     Private Sub btn_generar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_generar.Click
@@ -27,10 +37,22 @@
 
     Private Sub btn_editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_editar.Click
         'Edito una calle, el tipo de volúmen asignado a la misma y las ubicaciones asociadas.
+        If dgv_calles.SelectedRows.Count = 0 Then
+            MsgBox("Debe seleccionar una fila", vbExclamation, "Alerta!")
+        Else
+            frm_det_warehouse.action = frm_det_warehouse.action_type.update
+            row_selected = dgv_calles.SelectedRows(0)
+            frm_det_warehouse.ShowDialog()
+        End If
     End Sub
 
     Private Sub btn_borrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_borrar.Click
         'Elimino una calle y todas sus ubicaciones, siempre y cuando no tenga ubicaciones ocupadas.
+        If 1 = 1 Then
+
+        Else
+            MsgBox("No se ha podido eliminar la calle seleccionada", vbExclamation, "Error!")
+        End If
     End Sub
 
     Private Sub llenar_Grid(ByVal lst As List(Of calle))

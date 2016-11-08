@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_Avviamento" targetNamespace="http://tempuri.org/DS_Avviamento.xsd" xmlns:mstns="http://tempuri.org/DS_Avviamento.xsd" xmlns="http://tempuri.org/DS_Avviamento.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_Avviamento" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_Avviamento" msprop:Generator_UserDSName="DS_Avviamento">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DT_origen" msprop:Generator_TableClassName="DT_origenDataTable" msprop:Generator_TableVarName="tableDT_origen" msprop:Generator_TablePropName="DT_origen" msprop:Generator_RowDeletingName="DT_origenRowDeleting" msprop:Generator_RowChangingName="DT_origenRowChanging" msprop:Generator_RowEvHandlerName="DT_origenRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_origenRowDeleted" msprop:Generator_UserTableName="DT_origen" msprop:Generator_RowChangedName="DT_origenRowChanged" msprop:Generator_RowEvArgName="DT_origenRowChangeEvent" msprop:Generator_RowClassName="DT_origenRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pais" msprop:Generator_ColumnVarNameInTable="columnpais" msprop:Generator_ColumnPropNameInRow="pais" msprop:Generator_ColumnPropNameInTable="paisColumn" msprop:Generator_UserColumnName="pais" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo_vol" msprop:Generator_ColumnVarNameInTable="columntipo_vol" msprop:Generator_ColumnPropNameInRow="tipo_vol" msprop:Generator_ColumnPropNameInTable="tipo_volColumn" msprop:Generator_UserColumnName="tipo_vol" type="xs:string" minOccurs="0" />
+              <xs:element name="cant_mat" msprop:Generator_ColumnVarNameInTable="columncant_mat" msprop:Generator_ColumnPropNameInRow="cant_mat" msprop:Generator_ColumnPropNameInTable="cant_matColumn" msprop:Generator_UserColumnName="cant_mat" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Material" msprop:Generator_TableClassName="MaterialDataTable" msprop:Generator_TableVarName="tableMaterial" msprop:Generator_RowChangedName="MaterialRowChanged" msprop:Generator_TablePropName="Material" msprop:Generator_RowDeletingName="MaterialRowDeleting" msprop:Generator_RowChangingName="MaterialRowChanging" msprop:Generator_RowEvHandlerName="MaterialRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialRowDeleted" msprop:Generator_RowClassName="MaterialRow" msprop:Generator_UserTableName="Material" msprop:Generator_RowEvArgName="MaterialRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NRO_MAT" msprop:Generator_ColumnVarNameInTable="columnNRO_MAT" msprop:Generator_ColumnPropNameInRow="NRO_MAT" msprop:Generator_ColumnPropNameInTable="NRO_MATColumn" msprop:Generator_UserColumnName="NRO_MAT" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCRIPCION" msprop:Generator_ColumnVarNameInTable="columnDESCRIPCION" msprop:Generator_ColumnPropNameInRow="DESCRIPCION" msprop:Generator_ColumnPropNameInTable="DESCRIPCIONColumn" msprop:Generator_UserColumnName="DESCRIPCION" type="xs:string" minOccurs="0" />
+              <xs:element name="TIPO_VOLUMEN" msprop:Generator_ColumnVarNameInTable="columnTIPO_VOLUMEN" msprop:Generator_ColumnPropNameInRow="TIPO_VOLUMEN" msprop:Generator_ColumnPropNameInTable="TIPO_VOLUMENColumn" msprop:Generator_UserColumnName="TIPO_VOLUMEN" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Proveedores" msprop:Generator_TableClassName="ProveedoresDataTable" msprop:Generator_TableVarName="tableProveedores" msprop:Generator_TablePropName="Proveedores" msprop:Generator_RowDeletingName="ProveedoresRowDeleting" msprop:Generator_RowChangingName="ProveedoresRowChanging" msprop:Generator_RowEvHandlerName="ProveedoresRowChangeEventHandler" msprop:Generator_RowDeletedName="ProveedoresRowDeleted" msprop:Generator_UserTableName="Proveedores" msprop:Generator_RowChangedName="ProveedoresRowChanged" msprop:Generator_RowEvArgName="ProveedoresRowChangeEvent" msprop:Generator_RowClassName="ProveedoresRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cod" msprop:Generator_ColumnVarNameInTable="columncod" msprop:Generator_ColumnPropNameInRow="cod" msprop:Generator_ColumnPropNameInTable="codColumn" msprop:Generator_UserColumnName="cod" type="xs:string" minOccurs="0" />
+              <xs:element name="razon_social" msprop:Generator_ColumnVarNameInTable="columnrazon_social" msprop:Generator_ColumnPropNameInRow="razon_social" msprop:Generator_ColumnPropNameInTable="razon_socialColumn" msprop:Generator_UserColumnName="razon_social" type="xs:string" minOccurs="0" />
+              <xs:element name="pais_origen" msprop:Generator_ColumnVarNameInTable="columnpais_origen" msprop:Generator_ColumnPropNameInRow="pais_origen" msprop:Generator_ColumnPropNameInTable="pais_origenColumn" msprop:Generator_UserColumnName="pais_origen" type="xs:string" minOccurs="0" />
+              <xs:element name="cuit" msprop:Generator_ColumnVarNameInTable="columncuit" msprop:Generator_ColumnPropNameInRow="cuit" msprop:Generator_ColumnPropNameInTable="cuitColumn" msprop:Generator_UserColumnName="cuit" type="xs:string" minOccurs="0" />
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" type="xs:string" minOccurs="0" />
+              <xs:element name="referencia" msprop:Generator_ColumnVarNameInTable="columnreferencia" msprop:Generator_ColumnPropNameInRow="referencia" msprop:Generator_ColumnPropNameInTable="referenciaColumn" msprop:Generator_UserColumnName="referencia" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

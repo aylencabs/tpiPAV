@@ -110,10 +110,22 @@
     <Compile Include="Data_Layer\DAO\VolDAO.vb" />
     <Compile Include="Data_Layer\DAO\WarehouseDAO.vb" />
     <Compile Include="Data_Layer\Helper\DBHelper.vb" />
-    <Compile Include="DS_Avviamento.Designer.vb">
+    <Compile Include="GUI_Layer\DS_Avviamento.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Avviamento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_det_warehouse.Designer.vb">
+      <DependentUpon>frm_det_warehouse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_det_warehouse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_listado_proveedores.Designer.vb">
+      <DependentUpon>frm_listado_proveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Layer\frm_listado_proveedores.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI_Layer\report_list_mat.Designer.vb">
       <DependentUpon>report_list_mat.vb</DependentUpon>
@@ -205,6 +217,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI_Layer\frm_det_warehouse.resx">
+      <DependentUpon>frm_det_warehouse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\frm_listado_proveedores.resx">
+      <DependentUpon>frm_listado_proveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Layer\Reportes\Design\listado_proveedor.rdlc" />
     <EmbeddedResource Include="GUI_Layer\report_list_mat.resx">
       <DependentUpon>report_list_mat.vb</DependentUpon>
     </EmbeddedResource>
@@ -251,15 +270,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DS_Avviamento.xsc">
+    <None Include="GUI_Layer\DS_Avviamento.xsc">
       <DependentUpon>DS_Avviamento.xsd</DependentUpon>
     </None>
-    <None Include="DS_Avviamento.xsd">
+    <None Include="GUI_Layer\DS_Avviamento.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DS_Avviamento.Designer.vb</LastGenOutput>
     </None>
-    <None Include="DS_Avviamento.xss">
+    <None Include="GUI_Layer\DS_Avviamento.xss">
       <DependentUpon>DS_Avviamento.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
@@ -357,6 +376,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paperr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

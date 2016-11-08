@@ -24,36 +24,32 @@ Partial Class report_list_mat
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.DT_origenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MaterialBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DS_Avviamento = New Gestion_Avviamento.DS_Avviamento()
-        Me.list_mat = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.DT_origenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btn_generar = New System.Windows.Forms.Button()
         Me.DS_orig_matBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DT_origenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.list_mat = New Microsoft.Reporting.WinForms.ReportViewer()
+        CType(Me.MaterialBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_Avviamento, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DT_origenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_orig_matBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DT_origenBindingSource
+        'MaterialBindingSource
         '
-        Me.DT_origenBindingSource.DataMember = "DT_origen"
-        Me.DT_origenBindingSource.DataSource = Me.DS_Avviamento
+        Me.MaterialBindingSource.DataMember = "Material"
+        Me.MaterialBindingSource.DataSource = Me.DS_Avviamento
         '
         'DS_Avviamento
         '
         Me.DS_Avviamento.DataSetName = "DS_Avviamento"
         Me.DS_Avviamento.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'list_mat
+        'DT_origenBindingSource
         '
-        ReportDataSource1.Name = "DS_origen"
-        ReportDataSource1.Value = Me.DT_origenBindingSource
-        Me.list_mat.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.list_mat.LocalReport.ReportEmbeddedResource = "Gestion_Avviamento.report_orig_mat.rdlc"
-        Me.list_mat.Location = New System.Drawing.Point(12, 57)
-        Me.list_mat.Name = "list_mat"
-        Me.list_mat.Size = New System.Drawing.Size(681, 515)
-        Me.list_mat.TabIndex = 3
+        Me.DT_origenBindingSource.DataMember = "DT_origen"
+        Me.DT_origenBindingSource.DataSource = Me.DS_Avviamento
         '
         'btn_generar
         '
@@ -65,12 +61,23 @@ Partial Class report_list_mat
         Me.btn_generar.TabIndex = 0
         Me.btn_generar.UseVisualStyleBackColor = True
         '
+        'list_mat
+        '
+        ReportDataSource1.Name = "DS_mats"
+        ReportDataSource1.Value = Me.MaterialBindingSource
+        Me.list_mat.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.list_mat.LocalReport.ReportEmbeddedResource = "Gestion_Avviamento.listado_mats.rdlc"
+        Me.list_mat.Location = New System.Drawing.Point(12, 56)
+        Me.list_mat.Name = "list_mat"
+        Me.list_mat.Size = New System.Drawing.Size(555, 516)
+        Me.list_mat.TabIndex = 1
+        '
         'report_list_mat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(710, 584)
+        Me.ClientSize = New System.Drawing.Size(574, 584)
         Me.Controls.Add(Me.list_mat)
         Me.Controls.Add(Me.btn_generar)
         Me.Font = New System.Drawing.Font("Calibri", 14.25!)
@@ -81,15 +88,17 @@ Partial Class report_list_mat
         Me.Name = "report_list_mat"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Materiales por Origen y Volumen"
-        CType(Me.DT_origenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MaterialBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_Avviamento, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DT_origenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_orig_matBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents btn_generar As System.Windows.Forms.Button
     Friend WithEvents DS_orig_matBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents list_mat As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents DT_origenBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DS_Avviamento As Gestion_Avviamento.DS_Avviamento
+    Friend WithEvents list_mat As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents MaterialBindingSource As System.Windows.Forms.BindingSource
 End Class

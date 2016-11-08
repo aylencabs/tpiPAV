@@ -32,6 +32,7 @@ Partial Class Frm_principal
         Me.tool_grip_report = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteOrigenMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeMaterialesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tool_grip_admin = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_user = New System.Windows.Forms.Panel()
@@ -65,31 +66,35 @@ Partial Class Frm_principal
         '
         'ToolStripMenuItem1
         '
+        Me.ToolStripMenuItem1.Image = Global.Gestion_Avviamento.My.Resources.Resources.truck
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(203, 22)
         Me.ToolStripMenuItem1.Text = "Gestión de Proveedores"
         '
         'ToolStripMenuItem2
         '
+        Me.ToolStripMenuItem2.Image = Global.Gestion_Avviamento.My.Resources.Resources.tool
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(203, 22)
         Me.ToolStripMenuItem2.Text = "Gestión de Materiales"
         '
         'MovimientosToolStripMenuItem
         '
+        Me.MovimientosToolStripMenuItem.Image = Global.Gestion_Avviamento.My.Resources.Resources.empty_box
         Me.MovimientosToolStripMenuItem.Name = "MovimientosToolStripMenuItem"
         Me.MovimientosToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
         Me.MovimientosToolStripMenuItem.Text = "Movimientos"
         '
         'ReportesToolStripMenuItem
         '
+        Me.ReportesToolStripMenuItem.Image = Global.Gestion_Avviamento.My.Resources.Resources.box
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
         Me.ReportesToolStripMenuItem.Text = "Gestión de Almacén"
         '
         'tool_grip_report
         '
-        Me.tool_grip_report.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteOrigenMaterialToolStripMenuItem, Me.ListadoDeMaterialesToolStripMenuItem})
+        Me.tool_grip_report.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteOrigenMaterialToolStripMenuItem, Me.ListadoDeMaterialesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem})
         Me.tool_grip_report.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tool_grip_report.Name = "tool_grip_report"
         Me.tool_grip_report.Size = New System.Drawing.Size(68, 20)
@@ -97,15 +102,24 @@ Partial Class Frm_principal
         '
         'ReporteOrigenMaterialToolStripMenuItem
         '
+        Me.ReporteOrigenMaterialToolStripMenuItem.Image = Global.Gestion_Avviamento.My.Resources.Resources.paper
         Me.ReporteOrigenMaterialToolStripMenuItem.Name = "ReporteOrigenMaterialToolStripMenuItem"
         Me.ReporteOrigenMaterialToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
         Me.ReporteOrigenMaterialToolStripMenuItem.Text = "Reporte origen Material"
         '
         'ListadoDeMaterialesToolStripMenuItem
         '
+        Me.ListadoDeMaterialesToolStripMenuItem.Image = Global.Gestion_Avviamento.My.Resources.Resources.paper
         Me.ListadoDeMaterialesToolStripMenuItem.Name = "ListadoDeMaterialesToolStripMenuItem"
         Me.ListadoDeMaterialesToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
         Me.ListadoDeMaterialesToolStripMenuItem.Text = "Listado de Materiales"
+        '
+        'ListadoDeProveedoresToolStripMenuItem
+        '
+        Me.ListadoDeProveedoresToolStripMenuItem.Image = Global.Gestion_Avviamento.My.Resources.Resources.paper
+        Me.ListadoDeProveedoresToolStripMenuItem.Name = "ListadoDeProveedoresToolStripMenuItem"
+        Me.ListadoDeProveedoresToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.ListadoDeProveedoresToolStripMenuItem.Text = "Listado de Proveedores"
         '
         'tool_grip_admin
         '
@@ -117,6 +131,7 @@ Partial Class Frm_principal
         '
         'GestiónDeUsuariosToolStripMenuItem
         '
+        Me.GestiónDeUsuariosToolStripMenuItem.Image = Global.Gestion_Avviamento.My.Resources.Resources.user
         Me.GestiónDeUsuariosToolStripMenuItem.Name = "GestiónDeUsuariosToolStripMenuItem"
         Me.GestiónDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
         Me.GestiónDeUsuariosToolStripMenuItem.Text = "Gestión de Usuarios"
@@ -204,4 +219,5 @@ Partial Class Frm_principal
     Friend WithEvents btn_salir As System.Windows.Forms.Button
     Friend WithEvents ReporteOrigenMaterialToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeMaterialesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

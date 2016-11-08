@@ -54,4 +54,8 @@
     Private Sub ListadoDeMaterialesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListadoDeMaterialesToolStripMenuItem.Click
         report_list_mat.ShowDialog()
     End Sub
+
+    Private Sub ListadoDeProveedoresToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListadoDeProveedoresToolStripMenuItem.Click
+        frm_listado_proveedores.ShowDialog()
+    End Sub
 End Class

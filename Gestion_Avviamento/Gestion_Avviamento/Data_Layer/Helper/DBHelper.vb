@@ -173,4 +173,33 @@ Public Class BDHelper
 
         Return tabla
     End Function
+
+    Public Function listado_proveedores() As DataTable
+        Dim conexion As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim tabla As New DataTable
+        Dim strSQL = "SELECT A.cod_proveedor AS COD, a.razon_social as razon_social, " & _
+        "b.descripcion as pais_origen, a.cuit as cuit, a.email as email, a.contacto as referencia" & _
+        " FROM Proveedor A, Paises B" & _
+        " WHERE a.pais = b.id" & _
+        " AND A.habilitado = 0" & _
+        " ORDER BY cod, pais_origen asc"
+
+        Try
+            conexion.ConnectionString = string_conexion
+            conexion.Open()
+            cmd.Connection = conexion
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = strSQL
+            tabla.Load(cmd.ExecuteReader)
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexion.Close()
+            conexion.Dispose()
+        End Try
+
+        Return tabla
+    End Function
+
 End Class
