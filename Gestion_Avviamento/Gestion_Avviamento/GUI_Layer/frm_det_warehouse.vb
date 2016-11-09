@@ -54,15 +54,19 @@
                 Else
                     street.habilitada = 0
                 End If
-            If oWarehouseServ.add_street(street, cant) = 1 Then
-                MsgBox("La calle y sus" + txt_cant.Text + " ubicaciones se han creado correctamente", vbExclamation, "Éxito")
-            Else
-                MsgBox("Ha ocurrido un error al insertar la calle y sus ubicaciones", vbExclamation, "Error")
-            End If
+                If oWarehouseServ.add_street(street, cant) <> 0 Then
+                    MsgBox("La calle y sus " + txt_cant.Text + " ubicacion/es se han creado correctamente", vbExclamation, "Éxito")
+                    frm_almacen.actualizar_grilla()
+                    Me.Dispose()
+                    Me.Close()
+                Else
+                    MsgBox("Ha ocurrido un error al insertar la calle y sus ubicaciones", vbExclamation, "Error")
+                End If
             Else
                 Dim street As New calle
                 Dim oWarehouseServ As New CalleService
 
+                street.nro_calle = Integer.Parse(txt_nro_calle.Text)
                 street.descripcion = txt_desc.Text
                 street.id_volumen = Integer.Parse(cbo_vol.SelectedValue.ToString)
                 If cb_habilitada.Checked = False Then
@@ -74,9 +78,12 @@
                     cant = -1
                 End If
                 If oWarehouseServ.edit_street(street, cant) = 1 Then
-                    MsgBox("La calle y sus" + txt_cant.Text + " ubicaciones se han creado correctamente", vbExclamation, "Éxito")
+                    MsgBox("La calle y sus " + txt_cant.Text + " ubicacion/es se han actualizado correctamente", vbExclamation, "Éxito")
+                    frm_almacen.actualizar_grilla()
+                    Me.Dispose()
+                    Me.Close()
                 Else
-                    MsgBox("Ha ocurrido un error al insertar la calle y sus ubicaciones", vbExclamation, "Error")
+                    MsgBox("Ha ocurrido un error al actualizar la calle y sus ubicaciones", vbExclamation, "Error")
                 End If
             End If
 
@@ -97,7 +104,8 @@
 
     Private Function validar() As Boolean
         Dim ret As Boolean = False
-        If IsNumeric(txt_cant.Text) & Not String.IsNullOrEmpty(txt_desc.Text) & cbo_vol.SelectedIndex <> -1 Then
+        If IsNumeric(txt_cant.Text.ToString) And Not String.IsNullOrWhiteSpace(txt_desc.Text.ToString) Then
+            '& Integer.Parse(cbo_vol.SelectedIndex.ToString) <> -1 Then
             ret = True
         End If
         Return ret

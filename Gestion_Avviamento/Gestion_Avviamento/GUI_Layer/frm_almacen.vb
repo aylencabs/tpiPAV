@@ -31,7 +31,7 @@
 
     End Sub
 
-    Private Sub btn_generar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_generar.Click
+    Private Sub btn_generar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'Genero las ubicaciones para una calle particular
     End Sub
 
@@ -48,10 +48,16 @@
 
     Private Sub btn_borrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_borrar.Click
         'Elimino una calle y todas sus ubicaciones, siempre y cuando no tenga ubicaciones ocupadas.
-        If 1 = 1 Then
-
+        Dim oStreetService As New CalleService
+        row_selected = dgv_calles.SelectedRows(0)
+        Dim result As Integer = oStreetService.delete_street(Integer.Parse(row_selected.Cells(0).Value))
+        If result = 1 Then
+            MsgBox("La calle " + row_selected.Cells(0).Value + " se ha borrado correctamente", vbExclamation, "Éxito!")
+            actualizar_grilla()
+        ElseIf result = 2 Then
+            MsgBox("La calle " + row_selected.Cells(0).Value + " no se puede borrar porque posee ubicaciones ocupadas", vbExclamation, "Error!")
         Else
-            MsgBox("No se ha podido eliminar la calle seleccionada", vbExclamation, "Error!")
+            MsgBox("No se ha podido eliminar la calle " + row_selected.Cells(0).Value, vbExclamation, "Error!")
         End If
     End Sub
 
@@ -83,9 +89,15 @@
         Dim oCalleService As New CalleService
         Dim llena As Integer = 0
 
-        If cbo_llena.SelectedItem.ToString = "SI" Then
-            llena = 1
-        End If
+        Try
+            If cbo_llena.SelectedItem.ToString = "SI" Then
+                llena = 1
+            End If
+
+        Catch ex As NullReferenceException
+            llena = 0
+
+        End Try
         If String.IsNullOrEmpty(txt_calle.Text) Then
             streets = oCalleService.get_all(-1, txt_descrip.Text, llena)
         Else

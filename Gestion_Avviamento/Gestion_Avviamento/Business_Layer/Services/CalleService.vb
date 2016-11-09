@@ -20,5 +20,8 @@
     Public Function edit_street(ByVal calle As calle, ByVal cant As Integer) As Integer
         Return oCalleDAO.edit_street(calle, cant)
     End Function
+    Public Function delete_street(ByVal nro_calle As Integer) As Integer
+        Return oCalleDAO.delete_calle(nro_calle)
+    End Function
 
 End Class

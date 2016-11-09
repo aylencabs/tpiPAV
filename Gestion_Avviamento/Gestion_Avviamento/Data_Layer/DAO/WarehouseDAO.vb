@@ -84,9 +84,20 @@ Public Class WarehouseDAO
     End Function
 
     Public Function add_street(ByVal calle As calle, ByVal cant As Integer) As Integer
-        Dim decSQL = "DECLARE @ident int"
-        Dim strSQL = "INSERT INTO Calle (decrip, habilitada, llena, tipo_volumen) VALUES ('" + calle.descripcion.ToString + "', " + calle.habilitada.ToString + ",0,1)"
-        Dim identSQL = "SELECT @ident = @@identity"
+        Dim strSQL As String = "DECLARE @ident int; "
+        strSQL += "INSERT INTO Calle (decrip, habilitada, llena, tipo_volumen) VALUES ('" + calle.descripcion.ToString + "', " + calle.habilitada.ToString + ",0,1); "
+        strSQL += "SELECT @ident = @@identity; "
+
+        'inserto todas las ubicaciones
+        For i As Integer = 0 To cant - 1
+            Dim id As Integer = i + 1
+            strSQL += "INSERT INTO Ubicacion (id_calle, nro, habilitada, ocupada) values (@ident, " + id.ToString + ",0,0); "
+        Next
+        Return BDHelper.getDBHelper.EjecutarTRANS(strSQL)
+    End Function
+
+    Public Function edit_street(ByVal calle As calle, ByVal cant As Integer) As Integer
+        Dim strSQL = "UPDATE Calle set decrip= '" + calle.descripcion.ToString + "', " + "habilitada = " + calle.habilitada.ToString + ", tipo_volumen = " + calle.id_volumen.ToString + " WHERE ID_CALLE = " + calle.nro_calle.ToString
         Dim status = 0
         Dim conexion As New SqlConnection
         Dim cmd As New SqlCommand
@@ -98,22 +109,22 @@ Public Class WarehouseDAO
             conexion.Open()
 
             trans = conexion.BeginTransaction()
-            'declaro la variable @ident
-            cmd = New SqlCommand(decSQL, conexion, trans)
-            cmd.ExecuteNonQuery()
+
             'inserto la nueva calle
             cmd = New SqlCommand(strSQL, conexion, trans)
             cmd.ExecuteNonQuery()
-            'asigno el valor del identity generado a @ident
-            cmd = New SqlCommand(identSQL, conexion, trans)
-            cmd.ExecuteNonQuery()
-
-            'inserto todas las ubicaciones
-            For i As Integer = 0 To cant - 1
-                Dim SQL = "INSERT INTO Ubicacion (id_calle, nro, habilitada, ocupada) values (@ident," + i + 1 + ",0,0)"
-                cmd = New SqlCommand(SQL, conexion, trans)
+            If cant <> -1 Then
+                'borro las ubicaciones
+                cmd = New SqlCommand("DELETE FROM Ubicacion WHERE id_calle = " + calle.nro_calle.ToString, conexion, trans)
                 cmd.ExecuteNonQuery()
-            Next
+                'inserto las nuevas ubicaciones
+                For i As Integer = 0 To cant - 1
+                    Dim id As Integer = i + 1
+                    Dim SQL = "INSERT INTO Ubicacion (id_calle, nro, habilitada, ocupada) values (" + calle.nro_calle.ToString + "," + id.ToString + ",0,0)"
+                    cmd = New SqlCommand(SQL, conexion, trans)
+                    cmd.ExecuteNonQuery()
+                Next
+            End If
             'hago commit a la transacción
             trans.Commit()
             status = 1
@@ -126,6 +137,46 @@ Public Class WarehouseDAO
             conexion.Close()
             conexion.Dispose()
         End Try
+        Return status
+    End Function
+    Public Function delete_calle(ByVal nro_calle As Integer) As Integer
+        Dim strSQL As String = " DELETE FROM CALLE WHERE id_calle = " + nro_calle.ToString
+        Dim SQL As String = "SELECT COUNT(ID_UBICACION) FROM UBICACION WHERE ID_CALLE = " + nro_calle.ToString + " AND OCUPADA <> 0"
+        Dim table As DataTable = BDHelper.getDBHelper.ConsultaSQL(SQL)
+        Dim status As Integer = 0
+
+        If table.Rows(0).Item(0) <> 0 Then
+            status = 2
+        Else
+            Dim conexion As New SqlConnection
+            Dim command As New SqlCommand
+            Dim trans As SqlTransaction = Nothing
+
+            Try
+                conexion.ConnectionString = "Data Source=AYLÉN-PC\AYLEN;Initial Catalog=TPI;User ID=avisuales; Password=instance"
+
+                conexion.Open()
+
+                trans = conexion.BeginTransaction()
+
+                command = New SqlCommand("DELETE UBICACION WHERE ID_CALLE = " + nro_calle.ToString, conexion, trans)
+                command.ExecuteNonQuery()
+                command = New SqlCommand(strSQL, conexion, trans)
+                command.ExecuteNonQuery()
+                
+                'hago commit a la transacción
+                trans.Commit()
+                status = 1
+            Catch sql_ex As SqlException
+                status = 0
+                trans.Rollback()
+            Catch ex As Exception
+
+            Finally
+                conexion.Close()
+                conexion.Dispose()
+            End Try
+        End If
         Return status
     End Function
 

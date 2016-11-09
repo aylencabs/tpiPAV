@@ -27,21 +27,20 @@ Partial Class frm_almacen
         Me.lbl_llena = New System.Windows.Forms.Label()
         Me.cbo_llena = New System.Windows.Forms.ComboBox()
         Me.dgv_calles = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_descrip = New System.Windows.Forms.TextBox()
-        Me.btn_generar = New System.Windows.Forms.Button()
-        Me.btn_watch = New System.Windows.Forms.Button()
-        Me.btn_borrar = New System.Windows.Forms.Button()
-        Me.btn_editar = New System.Windows.Forms.Button()
-        Me.btn_Nuevo = New System.Windows.Forms.Button()
-        Me.btn_cerrar = New System.Windows.Forms.Button()
-        Me.btn_Buscar = New System.Windows.Forms.Button()
         Me.id_calle = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descrip = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipo_vol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tot_ubic = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.llena = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_vol = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_descrip = New System.Windows.Forms.TextBox()
+        Me.btn_watch = New System.Windows.Forms.Button()
+        Me.btn_borrar = New System.Windows.Forms.Button()
+        Me.btn_editar = New System.Windows.Forms.Button()
+        Me.btn_Nuevo = New System.Windows.Forms.Button()
+        Me.btn_cerrar = New System.Windows.Forms.Button()
+        Me.btn_Buscar = New System.Windows.Forms.Button()
         CType(Me.dgv_calles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -97,102 +96,6 @@ Partial Class frm_almacen
         Me.dgv_calles.Size = New System.Drawing.Size(516, 249)
         Me.dgv_calles.TabIndex = 35
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(141, 23)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(92, 13)
-        Me.Label1.TabIndex = 37
-        Me.Label1.Text = "Descripción Calle:"
-        '
-        'txt_descrip
-        '
-        Me.txt_descrip.Location = New System.Drawing.Point(234, 20)
-        Me.txt_descrip.Margin = New System.Windows.Forms.Padding(5)
-        Me.txt_descrip.MaxLength = 8
-        Me.txt_descrip.Name = "txt_descrip"
-        Me.txt_descrip.Size = New System.Drawing.Size(88, 21)
-        Me.txt_descrip.TabIndex = 36
-        '
-        'btn_generar
-        '
-        Me.btn_generar.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.generar_ubicaciones
-        Me.btn_generar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_generar.ForeColor = System.Drawing.Color.Black
-        Me.btn_generar.Location = New System.Drawing.Point(54, 331)
-        Me.btn_generar.Name = "btn_generar"
-        Me.btn_generar.Size = New System.Drawing.Size(89, 35)
-        Me.btn_generar.TabIndex = 43
-        Me.btn_generar.UseVisualStyleBackColor = True
-        '
-        'btn_watch
-        '
-        Me.btn_watch.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.search_more
-        Me.btn_watch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_watch.ForeColor = System.Drawing.Color.Black
-        Me.btn_watch.Location = New System.Drawing.Point(546, 161)
-        Me.btn_watch.Name = "btn_watch"
-        Me.btn_watch.Size = New System.Drawing.Size(33, 29)
-        Me.btn_watch.TabIndex = 42
-        Me.btn_watch.UseVisualStyleBackColor = True
-        '
-        'btn_borrar
-        '
-        Me.btn_borrar.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.delete
-        Me.btn_borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_borrar.ForeColor = System.Drawing.Color.Black
-        Me.btn_borrar.Location = New System.Drawing.Point(546, 256)
-        Me.btn_borrar.Name = "btn_borrar"
-        Me.btn_borrar.Size = New System.Drawing.Size(33, 29)
-        Me.btn_borrar.TabIndex = 41
-        Me.btn_borrar.UseVisualStyleBackColor = True
-        '
-        'btn_editar
-        '
-        Me.btn_editar.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.edit1
-        Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_editar.ForeColor = System.Drawing.Color.Black
-        Me.btn_editar.Location = New System.Drawing.Point(546, 206)
-        Me.btn_editar.Name = "btn_editar"
-        Me.btn_editar.Size = New System.Drawing.Size(33, 29)
-        Me.btn_editar.TabIndex = 40
-        Me.btn_editar.UseVisualStyleBackColor = True
-        '
-        'btn_Nuevo
-        '
-        Me.btn_Nuevo.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.add
-        Me.btn_Nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_Nuevo.ForeColor = System.Drawing.Color.Black
-        Me.btn_Nuevo.Location = New System.Drawing.Point(546, 111)
-        Me.btn_Nuevo.Name = "btn_Nuevo"
-        Me.btn_Nuevo.Size = New System.Drawing.Size(33, 29)
-        Me.btn_Nuevo.TabIndex = 39
-        Me.btn_Nuevo.UseVisualStyleBackColor = True
-        '
-        'btn_cerrar
-        '
-        Me.btn_cerrar.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources._exit
-        Me.btn_cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_cerrar.ForeColor = System.Drawing.Color.Black
-        Me.btn_cerrar.Location = New System.Drawing.Point(546, 331)
-        Me.btn_cerrar.Name = "btn_cerrar"
-        Me.btn_cerrar.Size = New System.Drawing.Size(34, 35)
-        Me.btn_cerrar.TabIndex = 38
-        Me.btn_cerrar.UseVisualStyleBackColor = True
-        '
-        'btn_Buscar
-        '
-        Me.btn_Buscar.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.search
-        Me.btn_Buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_Buscar.ForeColor = System.Drawing.Color.Black
-        Me.btn_Buscar.Location = New System.Drawing.Point(546, 15)
-        Me.btn_Buscar.Name = "btn_Buscar"
-        Me.btn_Buscar.Size = New System.Drawing.Size(34, 28)
-        Me.btn_Buscar.TabIndex = 34
-        Me.btn_Buscar.UseVisualStyleBackColor = True
-        '
         'id_calle
         '
         Me.id_calle.HeaderText = "Nro. Calle"
@@ -230,13 +133,97 @@ Partial Class frm_almacen
         Me.id_vol.ReadOnly = True
         Me.id_vol.Visible = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(141, 23)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(92, 13)
+        Me.Label1.TabIndex = 37
+        Me.Label1.Text = "Descripción Calle:"
+        '
+        'txt_descrip
+        '
+        Me.txt_descrip.Location = New System.Drawing.Point(234, 20)
+        Me.txt_descrip.Margin = New System.Windows.Forms.Padding(5)
+        Me.txt_descrip.MaxLength = 8
+        Me.txt_descrip.Name = "txt_descrip"
+        Me.txt_descrip.Size = New System.Drawing.Size(88, 21)
+        Me.txt_descrip.TabIndex = 36
+        '
+        'btn_watch
+        '
+        Me.btn_watch.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.search_more
+        Me.btn_watch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_watch.ForeColor = System.Drawing.Color.Black
+        Me.btn_watch.Location = New System.Drawing.Point(546, 112)
+        Me.btn_watch.Name = "btn_watch"
+        Me.btn_watch.Size = New System.Drawing.Size(33, 29)
+        Me.btn_watch.TabIndex = 42
+        Me.btn_watch.UseVisualStyleBackColor = True
+        '
+        'btn_borrar
+        '
+        Me.btn_borrar.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.delete
+        Me.btn_borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_borrar.ForeColor = System.Drawing.Color.Black
+        Me.btn_borrar.Location = New System.Drawing.Point(546, 207)
+        Me.btn_borrar.Name = "btn_borrar"
+        Me.btn_borrar.Size = New System.Drawing.Size(33, 29)
+        Me.btn_borrar.TabIndex = 41
+        Me.btn_borrar.UseVisualStyleBackColor = True
+        '
+        'btn_editar
+        '
+        Me.btn_editar.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.edit1
+        Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_editar.ForeColor = System.Drawing.Color.Black
+        Me.btn_editar.Location = New System.Drawing.Point(546, 157)
+        Me.btn_editar.Name = "btn_editar"
+        Me.btn_editar.Size = New System.Drawing.Size(33, 29)
+        Me.btn_editar.TabIndex = 40
+        Me.btn_editar.UseVisualStyleBackColor = True
+        '
+        'btn_Nuevo
+        '
+        Me.btn_Nuevo.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.add
+        Me.btn_Nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_Nuevo.ForeColor = System.Drawing.Color.Black
+        Me.btn_Nuevo.Location = New System.Drawing.Point(546, 62)
+        Me.btn_Nuevo.Name = "btn_Nuevo"
+        Me.btn_Nuevo.Size = New System.Drawing.Size(33, 29)
+        Me.btn_Nuevo.TabIndex = 39
+        Me.btn_Nuevo.UseVisualStyleBackColor = True
+        '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources._exit
+        Me.btn_cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_cerrar.ForeColor = System.Drawing.Color.Black
+        Me.btn_cerrar.Location = New System.Drawing.Point(546, 282)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(34, 35)
+        Me.btn_cerrar.TabIndex = 38
+        Me.btn_cerrar.UseVisualStyleBackColor = True
+        '
+        'btn_Buscar
+        '
+        Me.btn_Buscar.BackgroundImage = Global.Gestion_Avviamento.My.Resources.Resources.search
+        Me.btn_Buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_Buscar.ForeColor = System.Drawing.Color.Black
+        Me.btn_Buscar.Location = New System.Drawing.Point(546, 15)
+        Me.btn_Buscar.Name = "btn_Buscar"
+        Me.btn_Buscar.Size = New System.Drawing.Size(34, 28)
+        Me.btn_Buscar.TabIndex = 34
+        Me.btn_Buscar.UseVisualStyleBackColor = True
+        '
         'frm_almacen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(618, 378)
-        Me.Controls.Add(Me.btn_generar)
+        Me.ClientSize = New System.Drawing.Size(618, 331)
         Me.Controls.Add(Me.btn_watch)
         Me.Controls.Add(Me.btn_borrar)
         Me.Controls.Add(Me.btn_editar)
@@ -275,7 +262,6 @@ Partial Class frm_almacen
     Friend WithEvents btn_borrar As System.Windows.Forms.Button
     Friend WithEvents btn_editar As System.Windows.Forms.Button
     Friend WithEvents btn_Nuevo As System.Windows.Forms.Button
-    Friend WithEvents btn_generar As System.Windows.Forms.Button
     Friend WithEvents id_calle As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents descrip As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tipo_vol As System.Windows.Forms.DataGridViewTextBoxColumn
